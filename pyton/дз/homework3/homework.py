@@ -106,30 +106,29 @@
 # print(sum_letters)
 #вариант 3
 word = input("Введите слово: ")
-letters=dict(
-    **dict.fromkeys(['A','E','I','O','U','L','N','S','T','R'],1)
-    **dict.fromkeys(['А','В','Е','И','Н','Р','О','С','Т'],1)
-    **dict.fromkeys(['D','G'],2)
-    **dict.fromkeys(['Д','К','Л','М','П','У',],2)
-    **dict.fromkeys(['F','H','V','W','Y'],4)
-    **dict.fromkeys(['Б','Г','Ё','Ь','Я'],3)
-    **dict.fromkeys(['Й','Ы'],4)
-    **dict.fromkeys(['K'],5)
-    **dict.fromkeys(['Ж','З','Х','Ц','Ч'],5)
-    **dict.fromkeys(['J','X',],8)
-    **dict.fromkeys(['Ш','Э','Ю',],8)
-    **dict.fromkeys(['Q','Z'],10)
-    **dict.fromkeys(['Ф','Щ','Ъ',],10)  
+letters = dict.fromkeys(['A','E','I','O','U','L','N','S','T','R'], 1)
+letters.update(dict.fromkeys(['А','В','Е','И','Н','Р','О','С','Т'], 1))
+letters.update(dict.fromkeys(['D','G'], 2))
+letters.update(dict.fromkeys(['Д','К','Л','М','П','У'], 2))
+letters.update(dict.fromkeys(['F','H','V','W','Y'], 4))
+letters.update(dict.fromkeys(['Б','Г','Ё','Ь','Я'], 3))
+letters.update(dict.fromkeys(['Й','Ы'], 4))
+letters.update(dict.fromkeys(['K'], 5))
+letters.update(dict.fromkeys(['Ж','З','Х','Ц','Ч'], 5))
+letters.update(dict.fromkeys(['J','X'], 8))
+letters.update(dict.fromkeys(['Ш','Э','Ю'], 8))
+letters.update(dict.fromkeys(['Q','Z'], 10))
+letters.update(dict.fromkeys(['Ф','Щ','Ъ'], 10))
   
     
-)
+
 sum_of_points=0
+
+print(sum(letters[letter.upper()] for letter in word if letter.upper() in letters))
 # for letter in word:
 #     try:
 #         sum_of_points+=letters[letter.upper()]
 #     expect:
 #         continue
 # print(sum_of_points)  
-test= sum(letters[letter.upper()] for letter in word if letter.upper() in letters)
-print(type(test))
 #print(sum(letters[letter.upper()] for letter in word if letter.upper() in letters))
