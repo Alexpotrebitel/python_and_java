@@ -72,13 +72,64 @@
 # Input:   notebook
 # Output:  14
 
+#вариант1 работает
 # Создаем словарь со значениями очков для каждой буквы
-scores = {'A': 1, 'B': 3, 'C': 3, 'D': 2, 'E': 1, 'F': 4, 'G': 2, 'H': 4, 'I': 1, 'J': 8, 'K': 5, 'L': 1, 'M': 3, 'N': 1, 'O': 1, 'P': 3, 'Q': 10, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 4, 'W': 4, 'X': 8, 'Y': 4, 'Z': 10}
+#scores = {'A': 1, 'B': 3, 'C': 3, 'D': 2, 'E': 1, 'F': 4, 'G': 2, 'H': 4, 'I': 1, 'J': 8, 'K': 5, 'L': 1, 'M': 3, 'N': 1, 'O': 1, 'P': 3, 'Q': 10, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 4, 'W': 4, 'X': 8, 'Y': 4, 'Z': 10}
 # Вводим слово с клавиатуры и переводим все буквы в верхний регистр
-word = input("Введите слово: ").upper()
+#word = input("Введите слово: ").upper()
 # Инициализируем переменную для хранения общей стоимости слова
-total_score = 0
+#total_score = 0
 # Перебираем каждую букву в слове и добавляем ее стоимость к общей стоимости
-for letter in word:
-    total_score += scores[letter]
-print(total_score)
+# for letter in word:
+#     total_score += scores[letter]
+# print(total_score)
+
+#вариант 2
+# scrabble_piont_table = {
+# 1: 'AEIOULNSTRАВЕИНОРСТ',
+# 2: 'DGДКЛМПУ',
+# 3: 'BCMPБГЁЬ',
+# 4: 'FHVWYЙЫ',
+# 5: 'KЖЗХЦЧ',
+# 8: 'JXШЭЮ',
+# 10: 'QZФЩЪ',
+# }
+
+# word = input('Type your word:')
+# sum_letters = 0
+
+# for char in word:
+# for point, chars in scrabble_piont_table.items():
+
+#     if char.lower() in chars.lower():
+#         sum_letters += point
+# print(sum_letters)
+#вариант 3
+word = input("Введите слово: ")
+letters=dict(
+    **dict.fromkeys(['A','E','I','O','U','L','N','S','T','R'],1)
+    **dict.fromkeys(['А','В','Е','И','Н','Р','О','С','Т'],1)
+    **dict.fromkeys(['D','G'],2)
+    **dict.fromkeys(['Д','К','Л','М','П','У',],2)
+    **dict.fromkeys(['F','H','V','W','Y'],4)
+    **dict.fromkeys(['Б','Г','Ё','Ь','Я'],3)
+    **dict.fromkeys(['Й','Ы'],4)
+    **dict.fromkeys(['K'],5)
+    **dict.fromkeys(['Ж','З','Х','Ц','Ч'],5)
+    **dict.fromkeys(['J','X',],8)
+    **dict.fromkeys(['Ш','Э','Ю',],8)
+    **dict.fromkeys(['Q','Z'],10)
+    **dict.fromkeys(['Ф','Щ','Ъ',],10)  
+  
+    
+)
+sum_of_points=0
+# for letter in word:
+#     try:
+#         sum_of_points+=letters[letter.upper()]
+#     expect:
+#         continue
+# print(sum_of_points)  
+test= sum(letters[letter.upper()] for letter in word if letter.upper() in letters)
+print(type(test))
+#print(sum(letters[letter.upper()] for letter in word if letter.upper() in letters))
