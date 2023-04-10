@@ -44,7 +44,7 @@ for i in range(len(berries)):
         max_sum = berries_sum
         max_bush = i+1 # кусты пронумерованы с 1, а не с 0
 
-if max_sum == -1:
+if max_sum == 0:
     print("Ягод на грядке нет")
 else:
     print(f"Макс. кол-во ягод {max_sum}, собрано для куста {max_bush}")
