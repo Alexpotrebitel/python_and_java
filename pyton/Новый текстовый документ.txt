@@ -1,0 +1,20 @@
+ x**0.5
+Boris Koshelev: Можно выкрутиться и последнюю итерацию вынести из цикла
+Nikita Marin: ({" , ".join(num)})
+Василий Горулев: я в прошлой ДЗ вынес + через if
+print(temp_znach, end="")
+if temp_number > 0:
+print(" + ", end="")
+Никита Язвинский: vvod = input('Введите число: ')
+for i in vvod:
+j+=1
+if j == len(vvod):
+vivod +=i
+break
+vivod +=i+'+'
+Boris Koshelev: Вынести последнюю итерацию из цикла
+for i in range(4):
+print(i, end=',')
+print(5)
+Кирилл Пичугин: list(map(str,lst))
+Кирилл Пичугин: [str(i) for i in lst]
